@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Peak & Eat</title>
+
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- css for datepicker -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+
+</script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a style="color:red; font-size:22px " class="navbar-brand" href="#">Peak & Eat</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input id="restaurant" size="35" type="text" class="form-control" placeholder="Location or Restaurant Name/Type">
+          </div> 
+          <button id="findTable" style="background-color:red;color:white" type="button" class="form-control" >Find a Table</button>
+        </form>
+        <form action="#" class="navbar-form navbar-right">
+          <fieldset >
+            <select id="numPeople" name="number" id="number" class="form-control">
+              <option selected="selected" value="-999">Number of People</option>
+              <option value="1" >1</option>
+              <option value="2" >2</option>
+              <option value="3" >3</option>
+              <option value="4" >4</option>
+              <option value="5" >5</option>
+              <option value="6" >6</option>
+              <option value="7" >7</option>
+              <option value="8" >8+</option>
+            </select>
+          </fieldset>
+        </form>
+        <form action="#" class="navbar-form navbar-right">
+          <select id="time" class="form-control tabindex="3" name="Select_0">
+            <option selected="selected" value="-999">Pick a Time</option>    
+            <option value="17:30">5:30 PM</option>    
+            <option value="18:00">6:00 PM</option>    
+            <option value="18:30">6:30 PM</option>    
+            <option value="19:00">7:00 PM</option>    
+            <option value="19:30">7:30 PM</option>    
+            <option value="20:00">8:00 PM</option>    
+            <option value="20:30">8:30 PM</option>    
+            <option value="21:00">9:00 PM</option>    
+            <option value="21:30">9:30 PM</option>    
+            <option value="22:00">10:00 PM</option>    
+            <option value="22:30">10:30 PM</option>    
+            <option value="23:00">11:00 PM</option>    
+            <option value="23:30">11:30 PM</option>  
+          </select>
+        </form>
+        <div class='navbar-form navbar-right'>
+          <div class="form-group">
+            <input type="text" class="form-control " id="datePicker" size="8">
+          </div>
+        </div>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  
+
+  <div class="container-fluid ">
+    <div class="row"  style="background-color:#f5f5f5">
+      <div id="sideBar" class="col-sm-3 col-md-2 col-lg-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <div><br>Ethnic
+            <ul><a href="#">Asian</a>
+              <ul><a href="#">Chinese</a></ul>
+              <ul><a href="#">Japanese</a></ul>
+              <ul><a href="#">Korean</a></ul>
+              <ul><a href="#">Thai</a></ul>
+            </ul>
+            <ul><a href="#">European</a>
+              <ul><a href="#">Italian</a></ul>
+              <ul><a href="#">Russian</a></ul>
+              <ul><a href="#">Turkish</a></ul>
+            </ul>
+            <ul><a href="#">Latino</a>
+              <ul><a href="#">Mexican</a></ul>
+            </ul>
+          </div>
+
+          <div><br>Price Range
+            <ul>
+              <ul><a href="#">$$$$</a>
+              </ul>
+              <ul><a href="#">$$$</a>
+              </ul>
+              <ul><a href="#">$$</a>
+              </ul>
+              <ul><a href="#">$</a>
+              </ul>
+            </ul>
+          </div>
+
+          <div>Rating
+            <ul>
+              <a href="#">
+                <img src="./starPics/5_stars.jpg" height="20">
+              </a>
+              <a href="#">
+                <img src="./starPics/4_stars.jpg" height="20">
+              </a>
+              <a href="#">
+                <img src="./starPics/3_stars.jpg" height="20">
+              </a>
+              <a href="#">
+                <img src="./starPics/2_stars.jpg" height="20">
+              </a>
+              <a href="#">
+                <img src="./starPics/1_star.jpg" height="20">
+              </a>
+              <a href="#">
+                <img src="./starPics/0_stars.jpg" height="20">
+              </a>
+            </ul>
+          </div>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href=""><br>Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-md-10 col-lg-10 main">
+        <div class="row placeholders">
+          <div id="mainThumbnail">
+            <h3 class="container">Restaurant Name (Paid$$$)
+              <img src="./starPics/5_stars.jpg" height="15">
+            </h3>
+            <div class="container">
+              <img src="./restaurantPics/stitch.jpg" width="1100" height="400"
+              class="reel"
+              id="image"
+              data-images="./restaurantPics/stitch.jpg"
+              data-stitched="496"
+              data-frames="30"
+              data-frame="15"
+              data-rows="3"
+              data-row="2"
+              data-loops="false"
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row placeholders">
+            <h3 class="col-sm-12 col-md-12 col-lg-12">Top List</h3>
+            <div id="restaurantList" class="col-sm-12 col-md-12 col-lg-12">
+
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="media-left media-right">
+                  <a href="#">
+                    <img class="media-object" src="./restaurantPics/stitch.jpg" alt="Failed to Load" width="64" height="64">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Restaurant Name</h4>
+                  <img src="./starPics/5_stars.jpg" height="10"><br>
+                  Some decent length Restaurant Description: Talking about food, interier, experience in the restaurant. Blahblahblahblahblahblah!!!!!!!
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- api javascript files -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="http://code.vostrel.cz/jquery.reel.js"></script>
+
+  <!-- own javascript files -->
+  <script type="text/javascript" src="./jsFiles/datePicker.js"></script>
+  <script type="text/javascript" src="./jsFiles/sidebarLook.js"></script>
+  <script type="text/javascript" src="./jsFiles/restaurantList.js"></script>
+  <script type="text/javascript" src="./jsFiles/findTable.js"></script>
+
+</body>
+</html>
